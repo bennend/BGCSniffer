@@ -920,9 +920,9 @@ def summaryAntismashResult(Result_folder, work_dir):
             else:
                 if file.endswith('gbk'):
                     AssemblyID_backup = re.split('_',file)
-                    AssemblyID_backup = AssemblyID_backup[-2:]
+                    AssemblyID_backup = AssemblyID_backup[0:2]
                     AssemblyID_backup = '_'.join(AssemblyID_backup)
-                    AssemblyID_backup = AssemblyID_backup.replace('.gbk', '')
+                    #AssemblyID_backup = AssemblyID_backup.replace('.gbk', '')
                     file_path = os.path.join(root,file)
                     for seq_record in SeqIO.parse(file_path, "genbank"):
                         ID = seq_record.id
